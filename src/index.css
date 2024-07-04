@@ -111,6 +111,10 @@ body {
     overflow: hidden;
 }
 
+.highlights .m-icon {
+    font-size: 3.5rem;
+}
+
 .transition-short {
     transition: 0.1s ease;
 }
@@ -199,7 +203,7 @@ body {
     }
 
     .card {
-        @apply bg-surface text-surfaceOn;
+        @apply text-surfaceOn;
     }
 
     .card-lg {
@@ -208,6 +212,26 @@ body {
 
     .card-sm {
         @apply rounded-16 p-6;
+    }
+
+    .aqi-1 {
+        @apply bg-aqi-1 text-on-aqi-1;
+    }
+
+    .aqi-2 {
+        @apply bg-aqi-2 text-on-aqi-2;
+    }
+
+    .aqi-3 {
+        @apply bg-aqi-3 text-on-aqi-3;
+    }
+
+    .aqi-4 {
+        @apply bg-aqi-4 text-on-aqi-4;
+    }
+
+    .aqi-5 {
+        @apply bg-aqi-5 text-on-aqi-5;
     }
 
     /* .heading {
