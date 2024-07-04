@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+img,
+span,
+input,
+button {
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    height: auto;
+}
+
+input,
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+}
+
+input {
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+sub,
+sup {
+    font-size: 0.8em;
+    vertical-align: baseline;
+}
+
+html {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #131214;
+    color: #EAE6F2;
+    font-size: 1.6rem;
+    overflow: hidden;
+}
+
+::selection {
+    background: hsla(0, 0%, 100%, 0.08);
+}
+
+:focus-visible {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 100%, 0.08);
+    border-radius: 31.25rem;
+}
+
+@font-face {
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/material-symbol-rounded.woff2') format(woff2);
+}
+
+.m-icon {
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-feature-setting: "liga";
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+}
+
+.transition-short {
+    transition: 0.1s ease;
+}
+
+#item-link {
+    box-shadow: none;
+    position: absolute;
+    inset: 0;
+}
+
+@layer components {
+    .container {
+        @apply max-w-[1600px] w-full mx-auto p-4;
+    }
+}
+
+@layer utilities {
+
+    .icon-btn {
+        /* bg-white-alpha-8 */
+        @apply w-[3.8rem] h-[3.8rem] rounded-circle grid place-items-center;
+    }
+
+    .has-state {
+        @apply relative hover:shadow-shadow-1 focus:shadow-none focus-visible:shadow-none;
+    }
+
+    .has-state::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        clip-path: circle(100% at 50% 50%);
+        border-radius: inherit;
+        transition: 0.1s ease;
+
+        @apply hover:bg-white-alpha-4 focus:bg-white-alpha-8 focus-visible:bg-white-alpha-8 focus:animate-ripple focus-visible:animate-ripple;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-primaryOn flex items-center gap-4 px-3 rounded-pill h-[3.5rem] leading-[3rem] max-w-max
+    }
+
+    .span {
+        @apply font-semiBold;
+    }
+
+    .btn-primary[disabled] {
+        @apply bg-outline cursor-not-allowed text-surfaceVariantOn;
+    }
+
+    .btn-primary[disabled]::before {
+        display: none;
+    }
+
+    .search-view-clip {
+        clip-path: circle(4% at calc(100% - 6.31rem) 5%);
+        transition: clip-path 0.5s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .search-view-clip-active {
+        clip-path: circle(130% at 73% 5%);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .search-loader::before {
+        @apply content-[''] absolute w-[2rem] top-1/2 right-4 translate-y-[50%] h-[2rem] border-[3px] border-solid border-surfaceOn border-t-transparent rounded-circle animate-loading
+    }
+
+    .search::-webkit-search-cancel-button {
+        display: none;
+    }
+}
