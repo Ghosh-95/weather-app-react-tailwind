@@ -125,6 +125,18 @@ body {
     .container {
         @apply max-w-[1600px] w-full mx-auto p-4;
     }
+
+    article.container::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+
+    article.container:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+        @apply bg-white-alpha-8;
+    }
+
+    article.container::-webkit-scrollbar-button {
+        height: 0.7rem;
+    }
 }
 
 @layer utilities {
@@ -185,4 +197,52 @@ body {
     .search::-webkit-search-cancel-button {
         display: none;
     }
+
+    .card {
+        @apply bg-surface text-surfaceOn;
+    }
+
+    .card-lg {
+        @apply rounded-28 p-[2.5rem];
+    }
+
+    .card-sm {
+        @apply rounded-16 p-6;
+    }
+
+    /* .heading {
+        @apply text-heading text-white leading-[1.1];
+    }
+
+    .title-1 {
+        @apply text-title-1;
+    }
+
+    .title-2 {
+        @apply text-title-2 mb-3;
+    }
+
+    .title-3 {
+        @apply text-title-3 font-semiBold;
+    }
+
+    .body-1 {
+        @apply text-body-1;
+    }
+
+    .body-2 {
+        @apply text-body-2 font-semiBold;
+    }
+
+    .body-3 {
+        @apply text-body-3
+    }
+
+    .label-1 {
+        @apply text-label-1;
+    }
+
+    .label-2 {
+        @apply text-label-2;
+    } */
 }
