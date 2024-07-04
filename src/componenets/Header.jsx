@@ -14,7 +14,7 @@ export default function Header() {
                 </a>
 
                 {/* data search view */}
-                <div className={`fixed left-0 top-0 w-full h-[100svh] md:h-[100vh] bg-surface text-surfaceOn z-[4] ${isSearrchViewActive ? 'search-view-clip-active' : 'search-view-clip'}`}>
+                <div className={`fixed left-0 top-0 w-full h-[100svh] md:h-[100vh] bg-surface text-surfaceOn z-10 ${isSearrchViewActive ? 'search-view-clip-active' : 'search-view-clip'}`}>
                     {/* search wrapper */}
                     <form action=""
                         id="search-field"
@@ -77,7 +77,7 @@ export default function Header() {
                     <a href="#/current-location" className="hidden btn-primary has-state">
 
                         <span className="m-icon">my_location</span>
-                        <span className="span pr-1 hidden">Current Location</span>
+                        <span className="span pr-1 hidden md:block">Current Location</span>
                     </a>
                 </div>
             </div>

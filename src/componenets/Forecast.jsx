@@ -1,10 +1,10 @@
 export default function Forecast() {
     return (
         <section className="mb-6" aria-labelledby="forecast-label">
-            <h2 id="forecast-label" className="text-title-2 font-semiBold">5 Days Forecast</h2>
+            <h2 id="forecast-label" className="text-title-2 font-semiBold mb-2">5 Days Forecast</h2>
 
             {/* {forecast-card} */}
-            <div className="card card-lg">
+            <div className="card bg-surface card-lg">
                 <ul>
                     {/* card-item */}
                     <li className="flex items-center mb-7 last-of-type:mb-0">

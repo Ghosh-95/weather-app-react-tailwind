@@ -3,7 +3,7 @@ export default function CurrentWeather() {
         <section aria-label="current-weather" className="mb-8">
 
             {/* current-weather-card */}
-            <div className="card card-lg">
+            <div className="card bg-surface card-lg">
                 {/* card-title */}
                 <h2 className="text-title-2 mb-3">Now</h2>
 
