@@ -234,6 +234,9 @@ body {
         @apply bg-aqi-5 text-on-aqi-5;
     }
 
+    .sd-container::-webkit-scrollbar {
+        display: none;
+    }
     /* .heading {
         @apply text-heading text-white leading-[1.1];
     }
