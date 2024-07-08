@@ -7,7 +7,7 @@ function HighlightCards({ type, icon, value, unit, position }) {
             <div className="flex items-center justify-between gap-4">
                 <span className="m-icon">{icon}</span>
 
-                <p className="text-title-1">{value}{type === "Humidity" ? <sup>{unit}</sup> : type === "Feels Like" ? <sup>&deg;c</sup> : <sub>{unit}</sub>}</p>
+                <p className="text-title-1 md:text-[2.4rem]">{value}{type === "Humidity" ? <sup>{unit}</sup> : type === "Feels Like" ? <sup>&deg;c</sup> : <sub>{unit}</sub>}</p>
             </div>
         </div>
     )
@@ -19,12 +19,12 @@ export default function Highlight() {
         <section className="highlights mb-8" aria-labelledby="highlight-label">
             <div className="card bg-surface card-lg">
 
-                <h2 className="text-title-2 font-semiBold" id="highlight-label">Today's Highlight</h2>
+                <h2 className="text-title-2 md:mb-4 font-semiBold" id="highlight-label">Today's Highlight</h2>
 
                 {/* highlight list */}
-                <article className="grid gap-8">
+                <article className="grid gap-8 md:grid-cols-[1fr_1fr]">
                     {/* highlight card, one */}
-                    <div className="card card-sm relative bg-black-alpha-10">
+                    <div className="card card-sm relative bg-black-alpha-10 md:col-span-2">
                         <h3 className="text-title-3 mb-7 font-semiBold text-surfaceVariantOn">Air Quality Index</h3>
 
                         {/* wrapper */}
@@ -34,33 +34,23 @@ export default function Highlight() {
                             {/* card-list */}
                             <ul className="flex items-center flex-wrap gap-y-3 flex-grow">
                                 {/* card-item */}
-                                <li className="flex items-center justify-end w-1/2 gap-2">
-                                    <p className="text-title-1">23</p>
+                                <li className="flex items-center justify-end w-1/2 md:w-1/4 md:flex-col-reverse gap-2">
+                                    <p className="text-title-1 md:text-[2.4rem]">23</p>
 
                                     <p className="text-label-1 text-surfaceVariantOn">PM <sub>2.5</sub></p>
                                 </li>
-                                <li className="flex items-center justify-end w-1/2 gap-2">
-                                    <p className="text-title-1">23</p>
+                                <li className="flex items-center justify-end w-1/2 md:w-1/4 md:flex-col-reverse gap-2">
+                                    <p className="text-title-1 md:text-[2.4rem]">23</p>
 
                                     <p className="text-label-1 text-surfaceVariantOn">PM <sub>2.5</sub></p>
                                 </li>
-                                <li className="flex items-center justify-end w-1/2 gap-2">
-                                    <p className="text-title-1">23</p>
+                                <li className="flex items-center justify-end w-1/2 md:w-1/4 md:flex-col-reverse gap-2">
+                                    <p className="text-title-1 md:text-[2.4rem]">23</p>
 
                                     <p className="text-label-1 text-surfaceVariantOn">PM <sub>2.5</sub></p>
                                 </li>
-                                <li className="flex items-center justify-end w-1/2 gap-2">
-                                    <p className="text-title-1">23</p>
-
-                                    <p className="text-label-1 text-surfaceVariantOn">PM <sub>2.5</sub></p>
-                                </li>
-                                <li className="flex items-center justify-end w-1/2 gap-2">
-                                    <p className="text-title-1">23</p>
-
-                                    <p className="text-label-1 text-surfaceVariantOn">PM <sub>2.5</sub></p>
-                                </li>
-                                <li className="flex items-center justify-end w-1/2 gap-2">
-                                    <p className="text-title-1">23</p>
+                                <li className="flex items-center justify-end w-1/2 md:w-1/4 md:flex-col-reverse gap-2">
+                                    <p className="text-title-1 md:text-[2.4rem]">23</p>
 
                                     <p className="text-label-1 text-surfaceVariantOn">PM <sub>2.5</sub></p>
                                 </li>
@@ -71,7 +61,7 @@ export default function Highlight() {
                     </div>
 
                     {/* highlight-card, two */}
-                    <div className="card card-sm relative bg-black-alpha-10">
+                    <div className="card card-sm relative bg-black-alpha-10 md:col-span-2">
                         <h3 className="text-title-3 mb-7 font-semiBold text-surfaceVariantOn">Sunrise and Sunset</h3>
 
                         {/* card-list */}
@@ -82,7 +72,7 @@ export default function Highlight() {
 
                                 <div>
                                     <p className="text-label-1 mb-3">Sunrise</p>
-                                    <p className="text-title-2">06:02 AM</p>
+                                    <p className="text-title-2 md:mb-4">06:02 AM</p>
                                 </div>
                             </div>
                             <div className="flex items-center justify-start flex-wrap w-1/2 gap-[0.5rem_1rem]">
@@ -90,7 +80,7 @@ export default function Highlight() {
 
                                 <div>
                                     <p className="text-label-1 mb-3">Sunrset</p>
-                                    <p className="text-title-2">05:02 PM</p>
+                                    <p className="text-title-2 md:mb-4">05:02 PM</p>
                                 </div>
                             </div>
                         </div>

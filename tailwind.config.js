@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         nunitoSans: ['Nunito Sans', 'sans-serif'],
       },
+      screens: {
+        md: '768px',
+      },
       colors: {
         primary: '#B5A1E5',
         primaryOn: '#100E17',
@@ -66,6 +69,11 @@ export default {
         'shadow-1': '0px 1px 3px hsla(0, 0%, 0%, 0.5)',
         'shadow-2': '0px 3px 6px hsla(0, 0%, 0%, 0.4)'
       },
+      dropShadow: {
+        'shadow-1': '0px 1px 3px hsla(0, 0%, 0%, 0.5)',
+        'shadow-2': '0px 3px 6px hsla(0, 0%, 0%, 0.4)'
+      }
+      ,
       keyframes: {
         ripple: {
           '0%': {

@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Highlight from "./Highlight";
 import HourlyForecast from "./HourlyForecast";
 
@@ -7,6 +8,8 @@ export default function ContentRight() {
             <Highlight />
 
             <HourlyForecast />
+
+            <Footer />
         </div>
     )
 }

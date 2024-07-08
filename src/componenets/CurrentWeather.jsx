@@ -5,7 +5,7 @@ export default function CurrentWeather() {
             {/* current-weather-card */}
             <div className="card bg-surface card-lg">
                 {/* card-title */}
-                <h2 className="text-title-2 mb-3">Now</h2>
+                <h2 className="text-title-2 mb-3 md:mb-4">Now</h2>
 
                 {/* weapper */}
                 <div className="my-4 flex gap-3 items-center">

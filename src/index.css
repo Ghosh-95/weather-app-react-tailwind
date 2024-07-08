@@ -127,7 +127,7 @@ body {
 
 @layer components {
     .container {
-        @apply max-w-[1600px] w-full mx-auto p-4;
+        @apply max-w-[1600px] w-full mx-auto p-4 md:p-7;
     }
 
     article.container::-webkit-scrollbar-thumb {
@@ -166,7 +166,7 @@ body {
     }
 
     .btn-primary {
-        @apply bg-primary text-primaryOn flex items-center gap-4 px-3 rounded-pill h-[3.5rem] leading-[3rem] max-w-max
+        @apply bg-primary text-primaryOn flex items-center gap-4 px-3 md:px-[1rem_1.5rem] rounded-pill h-[3.5rem] leading-[3rem] max-w-max
     }
 
     .span {
@@ -207,11 +207,11 @@ body {
     }
 
     .card-lg {
-        @apply rounded-28 p-[2.5rem];
+        @apply rounded-28 p-[2.5rem] md:p-4;
     }
 
     .card-sm {
-        @apply rounded-16 p-6;
+        @apply rounded-16 p-6 md:grid md:grid-rows-[min-content_1fr] md:p-4;
     }
 
     .aqi-1 {
@@ -237,6 +237,52 @@ body {
     .sd-container::-webkit-scrollbar {
         display: none;
     }
+
+    @media (min-width: 768px) {
+        .search-view-clip {
+            clip-path: circle(3% at calc(100%- 17.6rem) 6%);
+        }
+
+        .m-icon {
+            font-size: 3rem;
+        }
+
+        .search-view:not(:focus-within) .search-result {
+            display: none;
+        }
+
+        .search-view:focus-within .search-view-clip-active {
+            display: block;
+        }
+
+        .search-view:has(.search-view-clip-active):focus-within input {
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .large-view-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 23rem;
+            overflow-y: auto;
+            @apply rounded-bl-28 rounded-br-28 border-t border-outline empty:h-[7.5rem];
+        }
+
+        .large-view-list::-webkit-scrollbar-button {
+            width: 20px;
+        }
+
+        .search-view:is(:hover, :has(.large-view-list):hover) {
+            @apply drop-shadow-shadow-1;
+        }
+
+        .search-view:is(:hover, :has(.large-view-list):focus-within) {
+            @apply drop-shadow-shadow-2;
+        }
+    }
+
     /* .heading {
         @apply text-heading text-white leading-[1.1];
     }
