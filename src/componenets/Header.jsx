@@ -5,7 +5,7 @@ export default function Header() {
     const [searching, setSearching] = useState(false);
 
     return (
-        <header className="lg:relative lg:h-[9rem] lg:top-0">
+        <header className="lg:h-[12rem] lg:relative lg:z-[4] lg:top-0">
             <div className="container lg:h-full lg:pb-0 flex justify-between items-center">
                 <a href="#">
                     <img
@@ -14,11 +14,11 @@ export default function Header() {
                 </a>
 
                 {/* data search view */}
-                <div className={`fixed left-0 top-0 w-full h-[100svh] md:h-[100vh] bg-surface text-surfaceOn z-10 ${isSearrchViewActive ? 'search-view-clip-active' : 'search-view-clip'} lg:[all:unset] search-view`}>
+                <div className={`fixed left-0 top-0 w-full h-[100svh] md:h-[100vh] lg: bg-surface text-surfaceOn z-[4] ${isSearrchViewActive ? 'search-view-clip-active' : 'search-view-clip'} lg:[all:unset] lg:z-50 search-view`}>
                     {/* search wrapper */}
                     <form action=""
                         id="search-field"
-                        className={`relative border-b border-outline border-solid lg:border-none search-loader ${searching ? 'before:block' : 'before:hidden'} mb-3`}>
+                        className={`relative border-b border-outline border-solid lg:border-none search-loader ${searching ? 'before:block' : 'before:hidden'} mb-3 lg:w-[50vw] lg:h-14 lg:rounded-28`}>
 
                         <label htmlFor="search-bar">
                             <input
@@ -27,23 +27,26 @@ export default function Header() {
                                 onKeyUp={() => setTimeout(() => {
                                     setSearching(false);
                                 }, 500)}
-
-                                className="h-20 leading-[5rem] pl-[5rem] pr-4 placeholder:text-surfaceVariantOn-2 search lg:bg-surface lg:h-14 lg:rounded-28"
+                                onClick={() => setSearchViewActive(true)}
+                                className="h-20 leading-[5rem] pl-[5rem] pr-4 placeholder:text-surfaceVariantOn-2 search lg:bg-surface lg:rounded-28"
                                 autoComplete="off" />
 
-                            <span className={`m-icon hidden lg:block absolute top-[1.9rem] -translate-x-1/2 -translate-y-1/2 left-[2.5rem]`}>search</span>
+                            <span className={`m-icon hidden lg:block absolute top-[2.5rem] -translate-x-1/2 -translate-y-1/2 left-[2.5rem]`}>search</span>
                         </label>
 
                         <button className="icon-btn lg:hidden bg-transparent leading-icon has-state absolute -top-[2.3rem] -translate-x-1/2 -translate-y-1/2 left-[2.5rem]" aria-label="close-search"
-                            onClick={() => setSearchViewActive(false)}>
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setSearchViewActive(false);
+                            }}>
                             <span className="m-icon lg:block">arrow_back</span>
                         </button>
                     </form>
 
                     {/* search result, data-search-result */}
-                    <div className={`${isSearrchViewActive ? 'lg:block' : 'lg-hidden'} search-result`}>
+                    <div className={`${setSearchViewActive ? 'lg:block' : 'lg:hidden'} search-result`}>
                         {/* view list, data-search-list */}
-                        <ul className="pt-2 pb-4 lg:bg-surface large-view-list z-[99999999]">
+                        <ul className="pt-2 pb-4 lg:bg-surface large-view-list">
                             {/* view-item */}
                             <li className="relative h-[5.2rem] flex justify-start items-center gap-4 pl-4 pr-6 mb-8">
                                 {/* icon */}
@@ -58,7 +61,22 @@ export default function Header() {
                                 </div>
 
                                 {/* data-search-toggler */}
-                                <a href="#" id="item-link" className="has-state"></a>
+                                <a href="#" className="has-state item-link"></a>
+                            </li>
+                            <li className="relative h-[5.2rem] flex justify-start items-center gap-4 pl-4 pr-6 mb-8">
+                                {/* icon */}
+                                <span className="m-icon text-surfaceVariantOn">location_on</span>
+
+                                <div>
+                                    {/* title */}
+                                    <p>London</p>
+
+                                    {/* subtitle */}
+                                    <p className="text-surfaceVariantOn">State of London, GB</p>
+                                </div>
+
+                                {/* data-search-toggler */}
+                                <a href="#" className="has-state item-link"></a>
                             </li>
                         </ul>
                     </div>
@@ -68,7 +86,10 @@ export default function Header() {
                 {/* header-actions */}
                 <div className="flex justify-between items-center md:gap-6 gap-4">
                     {/* data-search-toggler */}
-                    <button onClick={() => setSearchViewActive(true)} className="icon-btn lg:hidden bg-white-alpha-8 has-state">
+                    <button onClick={(e) => {
+                        e.preventDefault();
+                        setSearchViewActive(true);
+                    }} className="icon-btn lg:hidden bg-white-alpha-8 has-state">
                         <span className="m-icon">search</span>
                     </button>
 

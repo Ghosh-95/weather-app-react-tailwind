@@ -4,7 +4,7 @@ import HourlyForecast from "./HourlyForecast";
 
 export default function ContentRight() {
     return (
-        <div>
+        <div className="">
             <Highlight />
 
             <HourlyForecast />

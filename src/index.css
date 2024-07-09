@@ -119,10 +119,10 @@ body {
     transition: 0.1s ease;
 }
 
-#item-link {
-    box-shadow: none;
+.item-link {
     position: absolute;
     inset: 0;
+    box-shadow: none;
 }
 
 @layer components {
@@ -151,7 +151,7 @@ body {
     }
 
     .has-state {
-        @apply relative hover:shadow-shadow-1 focus:shadow-none focus-visible:shadow-none;
+        @apply relative hover:shadow-shadow-1 h-full focus:shadow-none focus-visible:shadow-none;
     }
 
     .has-state::before {
@@ -246,7 +246,19 @@ body {
         .m-icon {
             font-size: 3rem;
         }
+    }
 
+    @media (min-width: 1200px) {
+
+        .search-view-clip,
+        .search-view {
+            all: unset;
+            position: relative;
+            width: 32rem;
+            animation: none;
+        }
+
+        .search-result,
         .search-view:not(:focus-within) .search-result {
             display: none;
         }
@@ -271,7 +283,7 @@ body {
         }
 
         .large-view-list::-webkit-scrollbar-button {
-            width: 20px;
+            width: 12px;
         }
 
         .search-view:is(:hover, :has(.large-view-list):hover) {

@@ -1,6 +1,6 @@
 function SliderListTemp({ time, img, value }) {
     return (
-        <li className="min-w-28 md:min-w-40 flex-grow flex-shrink basis-full">
+        <li className="min-w-32 md:min-w-40 flex-grow flex-shrink basis-full">
             <div className="card card-sm bg-surface text-center">
                 <p className="text-body-3">{time}</p>
 
@@ -16,7 +16,7 @@ function SliderListTemp({ time, img, value }) {
 
 function SliderListWind({ time, img, value }) {
     return (
-        <li className="min-w-28 md:min-w-40 flex-[1_1_100%]">
+        <li className="min-w-32 md:min-w-40 flex-[1_1_100%]">
             <div className="card card-sm bg-surface text-center">
                 <p className="text-body-3">{time}</p>
 
@@ -37,7 +37,7 @@ export default function HourlyForecast() {
             <h2 className="text-title-2 md:mb-4">Today at</h2>
 
             {/* slider-container */}
-            <div className="-mx-4 md:ml-3 overflow-x-auto sd-container w-full">
+            <div className="-mx-4 md:ml-3 overflow-x-auto sd-container">
 
                 {/* slider-list, data-temp */}
                 <ul className="flex gap-4 md:before:hidden md:after:min-w-3 after:content-[''] after:min-w-1 before:content-[''] before:min-w-1 my-5">

@@ -16,13 +16,13 @@ function HighlightCards({ type, icon, value, unit, position }) {
 
 export default function Highlight() {
     return (
-        <section className="highlights mb-8" aria-labelledby="highlight-label">
+        <section className="highlights mb-8 lg:relative lg:-z-10" aria-labelledby="highlight-label">
             <div className="card bg-surface card-lg">
 
                 <h2 className="text-title-2 md:mb-4 font-semiBold" id="highlight-label">Today's Highlight</h2>
 
                 {/* highlight list */}
-                <article className="grid gap-8 md:grid-cols-[1fr_1fr]">
+                <article className="grid gap-8 md:grid-cols-[1fr_1fr] lg:grid-cols-4">
                     {/* highlight card, one */}
                     <div className="card card-sm relative bg-black-alpha-10 md:col-span-2">
                         <h3 className="text-title-3 mb-7 font-semiBold text-surfaceVariantOn">Air Quality Index</h3>
